@@ -1,3 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
 body {
     background-color: #E8FFCE;
     height: max-content;
@@ -7,22 +17,65 @@ body {
 }
 
 .container {
-    width: 100%;
-    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     width: 35%;
-    margin: 0 auto;
+    height: 60%;
     padding: 30px;
-    margin-top: 30px;
     border-radius: 7px;
     text-align: center;
     background-color: #FFF;
     box-shadow: -6px 6px 6px #D0F5BE;
 }
 
-.img-container {
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.text-container h2 {
+    padding-top: 10px;
+    color: #58bbdd;
+}
+
+.social-card {
+    height: min-content;
+    padding: 0 30px;
+    margin-top: 20px;
+}
+
+.social-card h2 {
+    padding: 15px 0 0;
+    margin: 0;
+}
+
+.list-inline {
+    height: min-content;
+    list-style: none;
+    padding-left: 0px;
+    margin: 0;
+}
+
+.list-inline>li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.img-circle {
+    object-fit: cover;
     width: 125px;
     height: 125px;
     margin: 0 auto;
@@ -33,10 +86,6 @@ body {
     box-shadow: -4px 4px 3px rgb(216, 230, 201);
 }
 
-.img-circle {
-    width: 100%;
-}
-
 h1,
 h2,
 h3 {
@@ -44,8 +93,24 @@ h3 {
     color: #176B87;
 }
 
+h1 {
+    font-size: 25px;
+    margin-top: 10px;
+}
+
 p {
-    font-size: 18px;
+    font-size: 19px;
+}
+
+a {
+    text-decoration: none;
+    color: #0EA293;
+    font-size: 40px;
+    transition: all 150ms;
+}
+
+a:hover {
+    color: #27E1C1;
 }
 
 .btn-green-tea {
@@ -59,52 +124,53 @@ p {
     border: 2px solid #0EA293;
     cursor: pointer;
     box-shadow: -4px 4px 3px rgb(212, 228, 195);
+    transition: all 150ms;
 }
 
 .btn-green-tea:hover {
-    background-color: white;
+    background-color: #fcfff8;
     color: #0EA293;
-}
-
-.list-inline {
-    list-style: none;
-    padding-left: 0px;
-}
-
-.list-inline>li {
-    display: inline-block;
-    padding: 0px 20px;
-}
-
-a {
-    text-decoration: none;
-    color: #0EA293;
-    font-size: 50px;
-}
-
-a:hover {
-    color: #27E1C1;
 }
 
 @media (max-width: 960px) {
 
     /* For a screen < 960px, this CSS will be read */
-    .container {
-        width: 700px;
-    }
-
     .card {
         width: 85%;
+    }
+
+    .img-container {
+        width: 110px;
+        height: 110px;
+    }
+
+    p {
+        width: 85%;
+    }
+
+    h1 {
+        font-size: 22px;
+        width: 85%;
+    }
+
+    h2 {
+        font-size: 20px;
+        line-height: 15px;
+    }
+
+    a {
+        font-size: 40px;
+    }
+
+    .btn-green-tea {
+        padding: 14px;
+        font-size: 15px;
     }
 }
 
 @media (max-width: 720px) {
 
     /* For a screen < 720px, this CSS will be read */
-    .container {
-        width: 500px;
-    }
-
     .card {
         width: 85%;
     }
@@ -113,33 +179,72 @@ a:hover {
 @media (max-width: 540px) {
 
     /* For a screen < 540px, this CSS will be read */
-    .container {
-        width: 100%;
-        margin: 90px auto;
-    }
-
     .card {
         width: 80%;
-        margin: 0 auto;
-        padding: 20px 30px;
-        margin-top: 30px;
+        padding: 0px;
+    }
+
+    p {
+        width: 85%;
     }
 
     h1 {
-        font-size: 24px;
+        font-size: 22px;
+        width: 85%;
     }
 
     h2 {
         font-size: 20px;
-        line-height: 10px;
+        line-height: 15px;
     }
 
     .img-container {
         width: 110px;
-            height: 110px;
+        height: 110px;
     }
 
     a {
         font-size: 40px;
+    }
+
+    .btn-green-tea {
+        padding: 14px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 380px) {
+    .img-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .card {
+        width: 80%;
+        padding: 10px 15px;
+    }
+
+    .btn-green-tea {
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    p {
+        width: 85%;
+    }
+
+    h1 {
+        font-size: 20px;
+        width: 80%;
+    }
+
+    h2 {
+        font-size: 18px;
+        line-height: 10px;
+    }
+
+    a {
+        font-size: 30px;
+        padding-top: 10px;
     }
 }
